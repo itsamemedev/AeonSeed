@@ -1,8 +1,9 @@
 use bevy::prelude::*;
 
-pub mod discovery;
 pub mod dna;
+pub mod seed;
 pub mod health;
+pub mod network;
 
 /// Root plugin combining all SeedNet systems.
 pub struct SeedNetPlugin;
@@ -10,15 +11,10 @@ pub struct SeedNetPlugin;
 impl Plugin for SeedNetPlugin {
     fn build(&self, app: &mut App) {
         app.add_plugins((
-            discovery::SeedDiscoveryPlugin,
-            health::SeedHealthPlugin,
             dna::DnaPlugin,
+            seed::SeedPlugin,
+            health::SeedHealthPlugin,
+            network::SeedNetApiPlugin,
         ));
     }
-}
-
-/// Represents a handle to a dynamically loaded Seed instance.
-#[derive(Component)]
-pub struct SeedEntity {
-    pub id: u64,
 }
