@@ -1,3 +1,4 @@
+use aeoncode::AeonCodePlugin;
 use ai::AiPlugin;
 use bevy::prelude::*;
 use game::GamePlugin;
@@ -12,6 +13,7 @@ fn main() {
             DefaultPlugins,
             SeedNetPlugin,
             AiPlugin,
+            AeonCodePlugin,
             GamePlugin,
             RenderPlugin,
             LocalizationPlugin,
@@ -19,6 +21,7 @@ fn main() {
         .run();
 }
 
+mod aeoncode;
 mod ai;
 mod game;
 mod localization;
