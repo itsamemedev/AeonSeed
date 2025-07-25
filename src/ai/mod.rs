@@ -2,6 +2,7 @@ use bevy::prelude::*;
 
 pub mod language;
 pub mod memory;
+pub mod personality;
 pub mod npc_core;
 pub mod world_ai;
 
