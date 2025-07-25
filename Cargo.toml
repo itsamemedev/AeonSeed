@@ -1,0 +1,18 @@
+[package]
+name = "aeonseed"
+version = "0.1.0"
+edition = "2024"
+description = "Open source AI-driven MMORPG prototype"
+keywords = ["MMORPG", "bevy", "ai", "game"]
+license = "AGPL-3.0"
+repository = "https://github.com/aeonseed/aeonseed"
+
+[features]
+archive-seeds = []
+aeon-code = []
+
+[dependencies]
+bevy = "0.13"
+bevy-inspector-egui = "0.23"
+bevy_core_pipeline = "0.13"
+serde = { version = "1", features = ["derive"] }
