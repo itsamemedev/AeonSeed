@@ -6,6 +6,7 @@ pub mod personality;
 pub mod npc_core;
 pub mod world_ai;
 pub mod progression;
+pub mod influence;
 
 /// Root plugin bundling all AI systems.
 pub struct AiPlugin;
@@ -18,6 +19,7 @@ impl Plugin for AiPlugin {
             memory::MemoryPlugin,
             language::LanguagePlugin,
             progression::ProgressionPlugin,
+            influence::InfluencePlugin,
         ));
     }
 }

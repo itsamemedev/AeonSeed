@@ -24,3 +24,4 @@ mod game;
 mod localization;
 mod render;
 mod seednet;
+mod zones;

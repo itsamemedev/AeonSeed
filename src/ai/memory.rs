@@ -6,6 +6,21 @@ use uuid::Uuid;
 
 use super::personality::PersonalityProfile;
 
+/// Ruleset describing how memories are stored and forgotten.
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct MemoryModel {
+    /// 0.0 drops memories immediately, 1.0 keeps them forever.
+    pub retention_factor: f32,
+}
+
+impl Default for MemoryModel {
+    fn default() -> Self {
+        Self {
+            retention_factor: 1.0,
+        }
+    }
+}
+
 /// Entity, location or event a memory is about.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum MemorySubject {
