@@ -1,11 +1,11 @@
 [package]
 name = "aeonseed"
 version = "0.1.0"
-edition = "2024"
+edition = "2025"
 description = "Open source AI-driven MMORPG prototype"
 keywords = ["MMORPG", "bevy", "ai", "game"]
 license = "AGPL-3.0"
-repository = "https://github.com/aeonseed/aeonseed"
+repository = "https://github.com/itsamemedev/AeonSeed"
 
 [features]
 archive-seeds = []
