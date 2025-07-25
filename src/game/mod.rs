@@ -4,6 +4,7 @@ pub mod classes;
 pub mod player;
 pub mod professions;
 pub mod quests;
+pub mod soul;
 
 pub struct GamePlugin;
 
@@ -14,6 +15,7 @@ impl Plugin for GamePlugin {
             classes::ClassesPlugin,
             professions::ProfessionsPlugin,
             quests::QuestPlugin,
+            soul::SoulPlugin,
         ));
     }
 }
