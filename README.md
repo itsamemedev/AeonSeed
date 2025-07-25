@@ -30,6 +30,9 @@
 
 - [Erklärbuch (für alle)](./docs/AeonSeed_Erklaerbuch.pdf)
 - [Technisches Design-Dokument (PDF)](./docs/AeonSeed_Detail_Design_Dokument.pdf)
+- [Installationsanleitung](./docs/INSTALLATION.md)
+- [Build-Hinweise](./docs/BUILD.md)
+- [Modulübersicht](./docs/expansion_map.md)
 
 ---
 
@@ -50,3 +53,15 @@ Das bedeutet:
 - ❗ Wenn du den Code (auch verändert) öffentlich bereitstellst, musst du den Quellcode offenlegen
 
 Weitere Infos in der Datei [`LICENSE`](./LICENSE).
+
+---
+
+## 🏗️ Installation & Entwicklung
+
+Eine ausführliche Anleitung zur Einrichtung der Entwicklungsumgebung findest du in [docs/INSTALLATION.md](./docs/INSTALLATION.md). Details zum Kompilieren von Client und Server stehen in [docs/BUILD.md](./docs/BUILD.md).
+
+---
+
+## 🤝 Mitmachen
+
+Bitte lies vor dem Einreichen von Änderungen die [CONTRIBUTING.md](./CONTRIBUTING.md). Pull Requests und Ideen sind jederzeit willkommen!

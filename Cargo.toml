@@ -19,3 +19,12 @@ serde = { version = "1", features = ["derive"] }
 uuid = { version = "1", features = ["v4", "serde"] }
 chrono = { version = "0.4", features = ["serde"] }
 rand = "0.8"
+dotenvy = "0.15"
+serde_yaml = "0.9"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "aeonseed-server"
+path = "src/server/main.rs"

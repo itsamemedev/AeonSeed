@@ -8,7 +8,7 @@ use uuid::Uuid;
 use crate::cluster::{core::ClusterCore, node::ClusterStatus};
 
 /// Messages broadcast to seeds across the network.
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Event, Debug, Clone, Serialize, Deserialize)]
 pub enum SeedBroadcast {
     MergeRequest(Uuid, Uuid),
     ResourceWarning(Uuid),
@@ -30,6 +30,7 @@ pub struct ClusterAiPlugin;
 
 impl Plugin for ClusterAiPlugin {
     fn build(&self, app: &mut App) {
+        app.add_event::<SeedBroadcast>();
         app.init_resource::<ClusterMonitorTimer>();
         app.add_systems(Update, monitor_cluster);
     }
@@ -47,20 +48,29 @@ fn monitor_cluster(
         return;
     }
 
+    let entropy_threshold = cluster.entropy_threshold;
+    let resonance_threshold = cluster.resonance_threshold;
+
+    let mut to_archive = Vec::new();
+
     for (id, node) in cluster.nodes.iter_mut() {
-        if node.entropy_index > cluster.entropy_threshold {
-            cluster.archived_seeds.push(*id);
+        if node.entropy_index > entropy_threshold {
+            to_archive.push(*id);
             node.status = ClusterStatus::Archived;
             broadcasts.send(SeedBroadcast::GlobalEvent(format!(
                 "Seed {} archived due to high entropy",
                 id
             )));
-        } else if node.resonance_index > cluster.resonance_threshold {
+        } else if node.resonance_index > resonance_threshold {
             broadcasts.send(SeedBroadcast::GlobalEvent(format!(
                 "Seed {} reached high resonance",
                 id
             )));
         }
         node.last_updated = Utc::now();
+    }
+
+    for id in to_archive {
+        cluster.archived_seeds.push(id);
     }
 }
