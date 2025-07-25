@@ -8,6 +8,7 @@ pub mod world_ai;
 pub mod progression;
 pub mod influence;
 pub mod aeoncode;
+pub mod cluster_ai;
 
 /// Root plugin bundling all AI systems.
 pub struct AiPlugin;
@@ -22,6 +23,7 @@ impl Plugin for AiPlugin {
             progression::ProgressionPlugin,
             influence::InfluencePlugin,
             aeoncode::AeonCodeAiPlugin,
+            cluster_ai::ClusterAiPlugin,
         ));
     }
 }

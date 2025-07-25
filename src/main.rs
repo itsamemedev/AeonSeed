@@ -5,6 +5,7 @@ use game::GamePlugin;
 use localization::LocalizationPlugin;
 use render::RenderPlugin;
 use seednet::SeedNetPlugin;
+use cluster::ClusterPlugin;
 
 fn main() {
     // Initialize Bevy application with basic plugins
@@ -12,6 +13,7 @@ fn main() {
         .add_plugins((
             DefaultPlugins,
             SeedNetPlugin,
+            ClusterPlugin,
             AiPlugin,
             AeonCodePlugin,
             GamePlugin,
@@ -28,3 +30,4 @@ mod localization;
 mod render;
 mod seednet;
 mod zones;
+mod cluster;
