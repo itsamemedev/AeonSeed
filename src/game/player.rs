@@ -1,6 +1,7 @@
 use bevy::prelude::*;
 
 use super::soul::SoulProfile;
+use super::ethics::ForceAffinity;
 
 #[derive(Component)]
 pub struct Player;
@@ -14,5 +15,5 @@ impl Plugin for PlayerPlugin {
 }
 
 fn spawn_player(mut commands: Commands) {
-    commands.spawn((Player, SoulProfile::default()));
+    commands.spawn((Player, SoulProfile::default(), ForceAffinity::default()));
 }

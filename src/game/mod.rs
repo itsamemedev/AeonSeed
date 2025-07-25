@@ -5,6 +5,8 @@ pub mod player;
 pub mod professions;
 pub mod quests;
 pub mod soul;
+pub mod ethics;
+pub mod factions;
 
 pub struct GamePlugin;
 
@@ -16,6 +18,8 @@ impl Plugin for GamePlugin {
             professions::ProfessionsPlugin,
             quests::QuestPlugin,
             soul::SoulPlugin,
+            ethics::EthicsPlugin,
+            factions::FactionPlugin,
         ));
     }
 }
