@@ -1,69 +1,49 @@
-# Build-Anleitung
+# BUILD
 
-Dieser Leitfaden beschreibt, wie du Client und Server von AeonSeed kompilierst.
-Sowohl Client als auch Server setzen auf **Rust** und `cargo`. Optional kannst du den Client auch als WebAssembly (wasm) bauen.
+Dieses Dokument beschreibt den Build-Prozess für Server, Client und WebAssembly-Version von **AeonSeed**. Alle Aufgaben lassen sich über das `justfile` ausführen.
 
-## 🧱 Client-Build
+## Voraussetzungen
 
-- Debug-Start:
-  ```bash
-  cargo run
-  ```
-- Release-Build:
-  ```bash
-  cargo build --release
-  ```
-- Optional: TTS/VoiceCloning über Feature-Flags aktivieren:
-  ```bash
-  cargo run --features voice
-  ```
+* Rust stable via `rustup`
+* optionale Tools: `wasm-pack`, `trunk`
+* MongoDB und Redis lokal oder remote erreichbar
 
-Für den Web-Build (WASM) installiere zunächst das Ziel:
-```bash
-rustup target add wasm32-unknown-unknown
-cargo build --target wasm32-unknown-unknown --release
-```
-
-## 🧱 Server-Build
-
-Der Server befindet sich im separaten Binary `aeonseed-server` unter `src/server`.
-
-- Starten:
-  ```bash
-  cargo run --bin aeonseed-server
-  ```
-  Konfiguration erfolgt über eine `.env`-Datei oder `config.yaml` im Projektverzeichnis.
-  Der Server unterstützt Cluster-Kommunikation, Datenpersistenz und Seed-Hosting.
-  MongoDB und Redis müssen erreichbar sein. Nutze `docker-compose up` oder die automatischen Installer, um beides lokal zu starten.
-
-Für Selbsthosting kannst du in `config/cluster.toml` Seed-Knoten und Cluster-Größe definieren.
-
-## 📦 Build-Ziele
-
-- Erstelle nach dem Build ein ZIP-Archiv mit den Ordnern `bin/`, `assets/` und `config/`.
-- Client und Server lassen sich parallel betreiben, auch innerhalb von Docker-Containern.
-- Getestet auf Linux, macOS und Windows.
-
-### Lokale Tests
+## Client
 
 ```bash
-cargo run --features dev_seed
+just build-client        # Release-Build
+just dev                 # Entwicklungsmodus mit HotReload
 ```
-Damit wird ein lokaler Seed inklusive Testdaten erzeugt.
 
-### systemd-Beispiel
+Der Client unterstützt optionale Features wie `mobile_compat` und `voicechat`.
+Aktiviere sie per `cargo run --features "mobile_compat voicechat"`.
 
-```ini
-[Unit]
-Description=AeonSeed Server
-After=network.target
+## Server
 
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/aeonseed-server
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
+```bash
+just build-server
 ```
+
+Die Server-Binärdatei liegt danach in `target/release/aeonseed-server`.
+Sie kann ohne `.env` gestartet werden; alle Einstellungen befinden sich in `config/*.toml`.
+
+## WebAssembly
+
+```bash
+just wasm
+```
+
+Dies erstellt ein fertiges Paket für Browser-Clients. Das Ergebnis wird im `pkg/`-Ordner abgelegt.
+
+## Cross-Platform
+
+Getestet wird unter Linux, macOS und Windows. Der Build erfolgt über `rustup`-Targets, auf Wunsch auch per Cross-Compilation.
+
+## Deployment
+
+```bash
+just deploy
+```
+
+Dadurch werden die Release-Builds gepackt und können auf einen Server hochgeladen werden.
 

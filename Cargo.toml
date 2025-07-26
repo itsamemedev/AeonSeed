@@ -10,6 +10,13 @@ repository = "https://github.com/itsamemedev/AeonSeed"
 [features]
 archive-seeds = []
 aeon-code = []
+mobile_compat = []
+debug_ui = []
+modding_api = []
+seed_ai_dev = []
+cluster_monitor = []
+voicechat = []
+offline_mode = []
 
 [dependencies]
 bevy = "0.13"
