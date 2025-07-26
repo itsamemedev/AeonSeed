@@ -1,71 +1,61 @@
-# Features Overview
+# Features
 
-This document lists the implemented systems and planned improvements for AeonSeed.
+Die folgende Liste enthält alle derzeit implementierten Systeme von AeonSeed. Neue Funktionen seit Version 0.5 sind mit `[v0.5+]` gekennzeichnet.
 
-## Account System
-- In-game registration and login handled by `AccountPlugin`
-- Account data stored in MongoDB with Argon2 password hashing
-- Login rate limiting via Redis
-- Sessions persisted encrypted in `~/.aeonseed/session.json`
-- Optional guest mode without authentication
-
-## User Experience
-- `UiPlugin` provides launcher and in-game menus
-- No command line interaction required
-- Auto setup of new seeds on first start
-- Multilingual user interface support
-- Controller and mouse input handled by Bevy
+## Welt
+- Prozedural generierte Seeds mit eigenem Gedächtnis
+- Dynamisches Wetter und Jahreszeiten `[v0.5+]`
+- Ressourcenknappheit beeinflusst NPCs `[v0.5+]`
+- Anomalien mit Zeitbeschleunigung oder -rücklauf
+- Mehrsprachige Fraktionen mit Forschungsmechanik
+- Shadow Realms als Spiegelwelten
+- Biome wechseln bei längerem Ungleichgewicht
 
 ## Events
-- Modular event plugins for dungeons, raids, PvE and PvP instances
-- Dynamic instancing prepared via `DungeonPlugin`, `RaidPlugin`, `PvpPlugin` and `RitualPlugin`
-- Loot and boss logic will later use Seed metadata
+- Dungeons mit adaptiven Gegnern
+- Raids für bis zu 40 Spieler
+- PvE-Quests mit automatisch erzeugten Dialogen
+- Ritualsystem zum Öffnen besonderer Events
+- Wiederholbare Events mit abnehmender Belohnung
+- Instanzen können mutieren, wenn sie oft scheitern `[v0.5+]`
+- Weltweite Feiertage synchron über alle Seeds `[v0.5+]`
 
-## Infrastructure
-- `InfraPlugin` establishes Redis connections
-- Placeholder updater system for future patch distribution
+## Klassen & Skills
+- Seelenbasierte Charakterentwicklung ohne feste Skilltrees
+- Klassen können per Ritual gewechselt werden
+- Verborgene Shadow-Klassen mit geheimen Quests
+- Skill-Mutation durch Instabilität `[v0.5+]`
+- Berufssystem mit kombinierbaren Professionen
+- Mounts mit eigenem Fortschritt `[v0.5+]`
 
-## Planned Improvements
-1. NPC memory with long term effects
-2. World calendar with astrological influence
-3. Mythic mounts with bonding and skills
-4. Layered world map with interactive overlays
-5. Targeting system based on player profile
-6. Voice chat with live TTS translation
-7. Seed explorer tool for cluster data
-8. Platform independent JSON state format
-9. Accessible UI with screen reader support
-10. Crossplay preparation for web and mobile
-11. Auto updater with patch notes
-12. GUI installer for all platforms
-13. Crafting system with combinable professions
-14. PvP deception mechanics (e.g. disguises)
-15. Music and weather driven by world resonance
-16. Dungeon mutation when repeatedly failed
-17. Ritual system opening events
-18. Repeatable events with reward debuff
-19. Seed rescue when worlds decay
-20. Cluster heatmap showing activity zones
+## PvP
+- Arena-Kämpfe und offene Welt
+- PvPvE-Modus mit Fraktionszielen `[v0.5+]`
+- Täuschungsmechaniken wie Verkleidungen
+- Clan-Festungen für Gebietskontrolle
+- Nomaden-Clans ohne festen Seed `[v0.5+]`
 
-## New Experimental Systems
-- `world::climate` – dynamic seasons and weather affecting combat and farming
-- `world::resource_pressure` – scarcity influences NPC behavior and trade
-- `instance::shadow_realms` – inverted-logic versions of existing seeds
-- `world::anomalies` – time acceleration or reversal events
-- `lang::language_barriers` – faction languages requiring research
-- `class::morphing` – ritual based class switching
-- `class::shadow_classes` – hidden questline professions
-- `soul::modifications` – configurable soul attributes
-- `soul::reincarnation` – new worldview after death
-- `skills::mutation` – skills evolve through instability or choice
-- `clan::fortresses` – territory control with buff zones
-- `events::pvpve` – arenas combining PvP and PvE encounters
-- `clan::nomads` – traveling clans without home seeds
-- `cluster::magnetism` – cross-seed collisions causing chaos
-- `cluster::camouflage` – seeds hidden unless revealed by rituals
-- `tools::cluster_dashboard` – web UI for cluster heatmaps
-- `modding::api` – load custom classes, items and quests
-- `config::ai_policy` – JSON policy loader for AI behavior
-- `reporting::feedback` – screenshot and log upload button
-- `audio::mood_engine` – AI-synthesized music based on mood
+## Künstliche Intelligenz
+- Seed-KI generiert Quests und NPC-Gedächtnisse
+- Cluster-AI koordiniert alle Seeds global
+- NPCs besitzen individuelle Persönlichkeiten
+- KI-gesteuerte Musikstimmung `[v0.5+]`
+- Weltgeschehen beeinflusst Seed-DNA `[v0.5+]`
 
+## Benutzererlebnis
+- Accountsystem komplett im Client
+- Mehrsprachige Oberfläche mit Voice-Cloning
+- Screenshot- und Log-Upload direkt aus dem Spiel `[v0.5+]`
+- Barrierefreie Menüs und Controller-Unterstützung
+- Auto-Setup neuer Seeds beim ersten Start
+
+## Plattform & Netzwerk
+- Geschrieben in Rust mit Bevy-Engine
+- Serverarchitektur als frei skalierbarer Cluster
+- Auto-generierte Server (Seeds) bei Bedarf
+- Kompatibel mit MongoDB und Redis
+- WebAssembly-Client möglich `[v0.5+]`
+- Updater für zukünftige Patches `[v0.5+]`
+- Tools für Cluster-Heatmaps `[v0.5+]`
+
+Insgesamt umfasst das Spiel derzeit mehr als vierzig einzelne Systeme, die fortlaufend erweitert werden.

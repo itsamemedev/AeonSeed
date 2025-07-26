@@ -1,13 +1,39 @@
 # Modding API
 
-AeonSeed exposes a lightweight API for custom content. Mods can define new
-classes, items or quests using JSON files loaded at startup.
+Die Modding-Schnittstelle ermöglicht es, eigene Inhalte bequem zu laden. Alle Erweiterungen befinden sich in einem `mods/`‑Ordner neben der ausführbaren Datei.
 
-- Use `modding::api::ModdingRegistry` to register custom definitions
-- AI related systems are available through the `seed_ai` re-export
-- Example:
-  ```json
-  { "classes": [ { "name": "Chronomancer" } ] }
-  ```
+## Allgemeines Prinzip
+- Definitionen werden beim Start automatisch erkannt.
+- Unterstützte Formate: **RON**, **TOML** und **Lua** für Skripte.
+- Registriere deine Inhalte über `modding::api::ModdingRegistry`.
 
-The API is designed for expansion and will grow with future versions.
+## Eigene Klassen
+```ron
+[[classes]]
+name = "Chronomancer"
+start_skill = "time_bolt"
+```
+
+## Custom Quests
+```toml
+[quests.time_trial]
+title = "The Time Trial"
+script = "scripts/time_trial.lua"
+```
+
+Lua-Skripte haben Zugriff auf grundlegende Spielfunktionen über das `seed_ai`‑Binding.
+
+## Neue Seed-Zonen
+```ron
+[[zones]]
+identifier = "crystal_caverns"
+size = "medium"
+```
+
+Lege einfach weitere Dateien in den `mods/`‑Ordner, um neue Biome oder NPCs hinzuzufügen.
+
+## Erweiterungen
+- **Lua**: Ereignisse und KI‑Reaktionen skripten
+- **RON/TOML**: Datenstrukturen wie Items, Klassen, Quests
+
+Die API ist bewusst schlank gehalten und wächst mit zukünftigen Versionen.
