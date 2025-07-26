@@ -1,0 +1,18 @@
+[package]
+name = "aeonseed-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aeonseed-engine = { path = "../aeonseed-engine" }
+bevy = "0.13"
+serde = "1"
+serde_yaml = "0.9"
+dotenvy = "0.15"
+
+[[bin]]
+name = "aeonseed-server"
+path = "src/main.rs"
+
+[features]
+profiling = ["aeonseed-engine/profiling"]

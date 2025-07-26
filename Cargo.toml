@@ -1,44 +1,8 @@
-[package]
-name = "aeonseed"
-version = "0.1.0"
-edition = "2021"
-description = "Open source AI-driven MMORPG prototype"
-keywords = ["MMORPG", "bevy", "ai", "game"]
-license = "AGPL-3.0"
-repository = "https://github.com/itsamemedev/AeonSeed"
-
-[features]
-archive-seeds = []
-aeon-code = []
-mobile_compat = []
-debug_ui = []
-modding_api = []
-seed_ai_dev = []
-cluster_monitor = []
-voicechat = []
-offline_mode = []
-
-[dependencies]
-bevy = "0.13"
-bevy-inspector-egui = "0.23"
-bevy_core_pipeline = "0.13"
-serde = { version = "1", features = ["derive"] }
-uuid = { version = "1", features = ["v4", "serde"] }
-chrono = { version = "0.4", features = ["serde"] }
-rand = "0.8"
-dotenvy = "0.15"
-serde_yaml = "0.9"
-tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
-mongodb = { version = "3.2", default-features = false, features = ["sync", "openssl-tls", "compat-3-0-0"] }
-redis = "0.23"
-argon2 = "0.5"
-aes-gcm = "0.10"
-serde_json = "1"
-dirs = "5"
-
-[lib]
-path = "src/lib.rs"
-
-[[bin]]
-name = "aeonseed-server"
-path = "src/server/main.rs"
+[workspace]
+members = [
+    "crates/aeonseed-core",
+    "crates/aeonseed-engine",
+    "crates/aeonseed-client",
+    "crates/aeonseed-server"
+]
+resolver = "2"

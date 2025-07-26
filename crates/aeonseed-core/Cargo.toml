@@ -1,0 +1,39 @@
+[package]
+name = "aeonseed-core"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+archive-seeds = []
+aeon-code = []
+mobile_compat = []
+debug_ui = []
+modding_api = []
+seed_ai_dev = []
+cluster_monitor = []
+voicechat = []
+offline_mode = []
+profiling = ["tracing-tracy"]
+
+[dependencies]
+bevy = "0.13"
+bevy-inspector-egui = "0.23"
+bevy_core_pipeline = "0.13"
+serde = { version = "1", features = ["derive"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+rand = "0.8"
+dotenvy = "0.15"
+serde_yaml = "0.9"
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+mongodb = { version = "3.2", default-features = false, features = ["sync", "openssl-tls", "compat-3-0-0"] }
+redis = "0.23"
+argon2 = "0.5"
+aes-gcm = "0.10"
+serde_json = "1"
+sysinfo = "0.30"
+dirs = "5"
+tracing-tracy = { version = "0.11", optional = true }
+
+[lib]
+path = "src/lib.rs"

@@ -17,6 +17,11 @@
 - **Mehrsprachigkeit und Voice-Cloning**
 - **Open Source:** geschrieben in Rust mit der Bevy-Engine
 
+- **Headless-Server-Modus:** starte mit `--no-render`
+- **Mentor-System & Barrierefreiheit**
+- **Adminbefehl `/monitor`**
+- **Tracy-Profiling & Code-Coverage**
+- **Automatische Benchmarks & Canary-Builds**
 ---
 
 ## 🛠 Technischer Stack
@@ -71,3 +76,4 @@ Eine ausführliche Anleitung zur Einrichtung der Entwicklungsumgebung findest du
 ## 🤝 Mitmachen
 
 Bitte lies vor dem Einreichen von Änderungen die [CONTRIBUTING.md](./CONTRIBUTING.md). Pull Requests und Ideen sind jederzeit willkommen!
+\nWeitere Admin-Befehle siehe [docs/ADMIN_COMMANDS.md](docs/ADMIN_COMMANDS.md).\n

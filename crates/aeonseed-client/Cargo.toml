@@ -1,0 +1,15 @@
+[package]
+name = "aeonseed-client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aeonseed-engine = { path = "../aeonseed-engine" }
+bevy = "0.13"
+
+[[bin]]
+name = "aeonseed-client"
+path = "src/main.rs"
+
+[features]
+profiling = ["aeonseed-engine/profiling"]

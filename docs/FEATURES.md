@@ -59,3 +59,7 @@ Die folgende Liste enthält alle derzeit implementierten Systeme von AeonSeed. N
 - Tools für Cluster-Heatmaps `[v0.5+]`
 
 Insgesamt umfasst das Spiel derzeit mehr als vierzig einzelne Systeme, die fortlaufend erweitert werden.
+- Headless-Server-Modus `[v0.6+]`
+- Mentor-System und AI-Balancing `[v0.6+]`
+- Barrierefreie UI und /monitor `[v0.6+]`
+- Code-Coverage und Fuzzing `[v0.6+]`

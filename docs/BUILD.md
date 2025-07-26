@@ -47,3 +47,5 @@ just deploy
 
 Dadurch werden die Release-Builds gepackt und können auf einen Server hochgeladen werden.
 
+\n### Presets\n- `--profile server-release` führt ein optimiertes Build aus\n- Headless-Modus: `aeonseed-server --no-render`
+\nWASM-Builds: `just wasm`\nMobile-Preset: `cargo build --target wasm32-unknown-unknown --features mobile_compat`
