@@ -1,0 +1,22 @@
+[package]
+name = "aeonseed"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.13"
+bevy-inspector-egui = "0.23"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+dotenvy = "0.15"
+mongodb = { version = "3.2", default-features = false, features = ["sync", "openssl-tls", "compat-3-0-0"] }
+redis = "0.23"
+sha2 = "0.10"
+tokio = { version = "1", features = ["rt-multi-thread"] }
+
+[features]
+profiling = []
+
+[[bin]]
+name = "aeonseed"
+path = "src/main.rs"

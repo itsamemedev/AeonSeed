@@ -1,7 +1,6 @@
 use std::collections::HashMap;
 
-use argon2::{Argon2, PasswordHash, PasswordHasher, PasswordVerifier};
-use argon2::password_hash::{rand_core::OsRng, SaltString};
+use sha2::{Digest, Sha256};
 use bevy::prelude::*;
 use serde::{Deserialize, Serialize};
 
@@ -21,9 +20,9 @@ pub struct AccountManager {
 
 impl AccountManager {
     pub fn register(&mut self, username: &str, password: &str, language: &str, birth_year: i32, region: &str) {
-        let salt = SaltString::generate(&mut OsRng);
-        let argon2 = Argon2::default();
-        let hash = argon2.hash_password(password.as_bytes(), &salt).unwrap().to_string();
+        let mut hasher = Sha256::new();
+        hasher.update(password.as_bytes());
+        let hash = format!("{:x}", hasher.finalize());
         let account = Account {
             username: username.to_string(),
             password_hash: hash,
@@ -36,10 +35,10 @@ impl AccountManager {
 
     pub fn verify(&self, username: &str, password: &str) -> bool {
         if let Some(account) = self.accounts.get(username) {
-            if let Ok(hash) = PasswordHash::new(&account.password_hash) {
-                let argon2 = Argon2::default();
-                return argon2.verify_password(password.as_bytes(), &hash).is_ok();
-            }
+            let mut hasher = Sha256::new();
+            hasher.update(password.as_bytes());
+            let input_hash = format!("{:x}", hasher.finalize());
+            return input_hash == account.password_hash;
         }
         false
     }
