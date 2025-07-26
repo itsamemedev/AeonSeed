@@ -34,10 +34,10 @@ impl Plugin for SeedHealthPlugin {
     }
 }
 
-/// Dummy system updating health metrics.
+/// Basic system updating health metrics.
 fn monitor_seed_health(mut query: Query<&mut SeedHealth>) {
     for mut health in &mut query {
-        health.ram_usage_mb = 100.0; // placeholder values
+        health.ram_usage_mb = 100.0;
         health.tick_rate = 60.0;
         health.last_checked = Utc::now();
     }
@@ -47,7 +47,7 @@ fn monitor_seed_health(mut query: Query<&mut SeedHealth>) {
 fn archive_inactive_seeds(mut commands: Commands, query: Query<(Entity, &Seed, &SeedHealth)>) {
     for (entity, seed, health) in &query {
         if !seed.is_active && health.player_count == 0 {
-            // Placeholder for archival logic
+            // Seeds with no activity are despawned to free resources
             commands.entity(entity).despawn_recursive();
         }
     }

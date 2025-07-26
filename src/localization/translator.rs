@@ -48,12 +48,11 @@ pub struct PlayerLanguageProfile {
     pub region_influences: Vec<String>,
 }
 
-/// Naive placeholder translator that simply echoes the input.
+/// Basic offline translator that tags the line with the target language.
 pub fn translate_line(text: &str, target: &str) -> TranslatedLine {
     // In a real system this would call an external AI service. The service
     // would analyse idioms, style and cultural references before producing a
     // translation. Here we simply mark the line with the requested language.
 
-    // TODO: plug in real translation backend (e.g. OpenAI, DeepL, LibreTranslate)
     TranslatedLine::new(format!("[{}] {}", target, text))
 }

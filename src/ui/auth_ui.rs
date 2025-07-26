@@ -9,7 +9,6 @@ pub struct AuthState {
 }
 
 pub fn auth_ui_system(
-    mut commands: Commands,
     mut state: Local<AuthState>,
     mut session: ResMut<SessionStore>,
     mgr: Res<AccountManager>,

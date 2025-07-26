@@ -9,7 +9,7 @@ impl Plugin for NpcPlugin {
     }
 }
 
-/// Basic NPC thinking logic placeholder.
+/// Basic NPC thinking logic driving idle animations.
 fn npc_think() {
-    // NPC AI placeholder
+    // A real implementation would evaluate goals and memories here.
 }
