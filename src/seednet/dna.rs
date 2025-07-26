@@ -150,8 +150,8 @@ pub fn generate_random_seed_dna() -> SeedDNA {
     }
 }
 
-/// Create example DNA configurations used for demonstration purposes.
-pub fn generate_example_seeds() -> Vec<SeedDNA> {
+/// Create template DNA configurations used for demonstration purposes.
+pub fn generate_template_seeds() -> Vec<SeedDNA> {
     vec![
         // "Vurtan's Drift" – Eiswelt, langsame Zeit, Technologieverbot
         SeedDNA {

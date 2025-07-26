@@ -3,7 +3,7 @@ use uuid::Uuid;
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 
-use super::dna::{generate_example_seeds, generate_random_seed_dna, SeedDNA};
+use super::dna::{generate_random_seed_dna, generate_template_seeds, SeedDNA};
 use super::health::SeedHealth;
 
 /// Core component representing a world instance.
@@ -21,13 +21,13 @@ pub struct SeedPlugin;
 
 impl Plugin for SeedPlugin {
     fn build(&self, app: &mut App) {
-        app.add_systems(Startup, create_example_seeds);
+        app.add_systems(Startup, spawn_template_seeds);
     }
 }
 
 /// Spawn a few sample seeds to demonstrate the system.
-fn create_example_seeds(mut commands: Commands) {
-    for dna in generate_example_seeds() {
+fn spawn_template_seeds(mut commands: Commands) {
+    for dna in generate_template_seeds() {
         commands.spawn(Seed {
             id: Uuid::new_v4(),
             dna,

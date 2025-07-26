@@ -22,19 +22,26 @@ impl Default for ZoneAlignment {
 }
 
 /// Helper describing notable default zones.
-pub fn example_zones() -> Vec<ZoneAlignment> {
+pub fn core_zones() -> Vec<ZoneAlignment> {
     vec![
         ZoneAlignment {
-            zone: "Tempel der Fl\u{00fc}sternden Erinnerung".to_string(),
+            zone: "Zerbrochener Nexus".to_string(),
             alignment: WorldAlignment {
                 force_balance: 0.9,
                 influenced_by: Vec::new(),
             },
         },
         ZoneAlignment {
-            zone: "Die Glasw\u{00fc}ste".to_string(),
+            zone: "Ätherhauch-Steppe".to_string(),
             alignment: WorldAlignment {
                 force_balance: -1.0,
+                influenced_by: Vec::new(),
+            },
+        },
+        ZoneAlignment {
+            zone: "Turm von Varion".to_string(),
+            alignment: WorldAlignment {
+                force_balance: 0.3,
                 influenced_by: Vec::new(),
             },
         },

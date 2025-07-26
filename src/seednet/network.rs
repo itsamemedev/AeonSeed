@@ -15,7 +15,8 @@ impl Plugin for SeedNetApiPlugin {
 /// Example system that would locate seeds over the network.
 fn find_seed_stub(query: Query<&Seed>) {
     for seed in &query {
-        let _ = seed.id; // placeholder for network discovery
+        // In a full implementation this would broadcast discovery packets.
+        let _ = seed.id;
     }
 }
 
