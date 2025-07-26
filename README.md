@@ -35,6 +35,9 @@
 - [Technisches Design-Dokument (PDF)](./docs/AeonSeed_Detail_Design_Dokument.pdf)
 - [Installationsanleitung](./docs/INSTALL.md)
 - [Build-Hinweise](./docs/BUILD.md)
+- [Entwicklungs-Workflow](./docs/DEV_WORKFLOW.md)
+- [Testing](./docs/TESTING.md)
+- [Release Guide](./docs/RELEASE_GUIDE.md)
 - [Modulübersicht](./docs/expansion_map.md)
 
 ---

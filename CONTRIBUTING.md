@@ -8,6 +8,8 @@ Vielen Dank für dein Interesse an AeonSeed!
 2. Erstelle einen Fork und einen Branch pro Feature oder Bugfix.
 3. Führe vor jedem Commit `cargo check` aus.
 4. Beachte unseren Code-Stil: Snake_case für Dateinamen und Funktionen, CamelCase für Typen.
+5. Benenne Branches nach dem Schema `feat/<name>`, `fix/<name>`, `refactor/<name>`, `test/<name>`.
+6. Verwende das Commit-Format nach *Conventional Commits*, z. B. `feat: neues Event`.
 
 ## Pull Requests
 
@@ -15,6 +17,8 @@ Vielen Dank für dein Interesse an AeonSeed!
 - Beschreibe in der PR-Beschreibung kurz, was geändert wurde.
 - Verweise auf zugehörige Issues.
 - Achte darauf, dass dein Branch aktuell mit `main` rebaset wurde.
+- Stelle sicher, dass `just lint` und `just test` ohne Fehler durchlaufen.
+- Dokumentation und Logs gehören zum PR dazu.
 
 ## Issues
 
