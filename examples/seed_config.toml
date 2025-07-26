@@ -1,0 +1,4 @@
+# Beispiel fuer eine Seed-spezifische Konfiguration
+name = "demo-seed"
+max_players = 200
+weather_seed = 42

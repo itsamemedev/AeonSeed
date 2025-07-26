@@ -1,0 +1,8 @@
+# Beispielkonfiguration fuer AeonSeed
+[network]
+seed_name = "example-seed"
+port = 7777
+
+[database]
+mongodb_url = "mongodb://localhost:27017"
+redis_url = "redis://localhost:6379"
