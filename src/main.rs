@@ -7,6 +7,10 @@ use aeonseed::{
     localization::LocalizationPlugin,
     render::RenderPlugin,
     seednet::SeedNetPlugin,
+    account::AccountPlugin,
+    ui::UiPlugin,
+    events::EventsPlugin,
+    infra::InfraPlugin,
 };
 
 fn main() {
@@ -21,6 +25,10 @@ fn main() {
             GamePlugin,
             RenderPlugin,
             LocalizationPlugin,
+            AccountPlugin,
+            UiPlugin,
+            EventsPlugin,
+            InfraPlugin,
         ))
         .run();
 }
