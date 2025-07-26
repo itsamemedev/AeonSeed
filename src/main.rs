@@ -11,13 +11,24 @@ use aeonseed::{
     ui::UiPlugin,
     events::EventsPlugin,
     infra::InfraPlugin,
+    world::WorldPlugin,
+    instance::InstancePlugin,
+    lang::LangPlugin,
+    class::ClassExtPlugin,
+    soul::SoulExtPlugin,
+    skills::SkillsPlugin,
+    clan::ClanPlugin,
+    tools::ToolsPlugin,
+    modding::ModdingPlugin,
+    audio::mood_engine::MoodEnginePlugin,
+    reporting::feedback::FeedbackPlugin,
 };
 
 fn main() {
     // Initialize Bevy application with basic plugins
     App::new()
+        .add_plugins(DefaultPlugins)
         .add_plugins((
-            DefaultPlugins,
             SeedNetPlugin,
             ClusterPlugin,
             AiPlugin,
@@ -29,6 +40,19 @@ fn main() {
             UiPlugin,
             EventsPlugin,
             InfraPlugin,
+        ))
+        .add_plugins((
+            WorldPlugin,
+            InstancePlugin,
+            LangPlugin,
+            ClassExtPlugin,
+            SoulExtPlugin,
+            SkillsPlugin,
+            ClanPlugin,
+            ToolsPlugin,
+            ModdingPlugin,
+            MoodEnginePlugin,
+            FeedbackPlugin,
         ))
         .run();
 }
