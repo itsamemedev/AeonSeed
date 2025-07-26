@@ -1,18 +1,21 @@
 # 🌱 AeonSeed – Das lebendige, KI-gesteuerte Meta-MMORPG
 
-**AeonSeed** ist ein vollständig quelloffenes, kostenloses MMORPG, das sich selbst weiterentwickelt. Es nutzt künstliche Intelligenz, um Spielwelten, Quests, NPCs, Sprachen und sogar Serverstrukturen dynamisch zu erschaffen – und zwar vollständig autonom. Jeder Spielserver („Seed“) ist einzigartig, hat seine eigene Geschichte, sein eigenes Gedächtnis und kann durch Spielerhandlungen dauerhaft verändert oder neu geboren werden.
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+
+**AeonSeed** ist ein KI-gesteuertes Open-Source-MMORPG in Rust. Das Spiel entwickelt sich selbst weiter und erschafft dynamisch neue Quests, NPCs, Sprachen und ganze Serverstrukturen. Jeder Spielserver („Seed“) ist einzigartig, besitzt ein eigenes Gedächtnis und reagiert dauerhaft auf deine Taten.
 
 ---
 
 ## 🚀 Features
 
-- **Seed-Netzwerk:** Autarke, dynamische Server, die sich selbst erstellen, verbinden und abschalten können
-- **KI-gesteuerte Welt:** Kein statisches Leveldesign – jede Quest, Zone, Religion, Fraktion und jedes Ereignis entsteht dynamisch
-- **The Aeon Code:** Ein geheimes, globales Metaspiel, das über alle Seeds hinweg Hinweise versteckt
-- **Vollständige Mehrsprachigkeit:** Semantisch und emotional übersetzte Dialoge, inklusive Voice-Cloning
-- **Neue Klassen & Berufe:** Keine Klischees – du entwickelst deine Seele durch Entscheidungen, nicht Skilltrees
-- **Emotionale Persistenz:** Deine Taten hinterlassen Spuren – in der Welt und in anderen Spielern
-- **Open Source & Ressourcenfreundlich:** Geschrieben in Rust mit GPU-optimierter Bevy-Engine
+- **Accountsystem im Client:** Registrierung und Login ohne Webseite
+- **Seed-KI:** erschafft Quests, NPCs und Server selbstständig
+- **Cluster-Architektur:** mehrere Seeds bilden ein zusammenhängendes Universum
+- **PvE, PvP und Raids:** dynamische Instanzen für jede Gruppengröße
+- **Dynamische Klassen und Skills:** Entwicklung über Entscheidungen und Rituale
+- **Auto-generierte Server:** Seeds entstehen und verschwinden je nach Bedarf
+- **Mehrsprachigkeit und Voice-Cloning**
+- **Open Source:** geschrieben in Rust mit der Bevy-Engine
 
 ---
 
@@ -30,7 +33,7 @@
 
 - [Erklärbuch (für alle)](./docs/AeonSeed_Erklaerbuch.pdf)
 - [Technisches Design-Dokument (PDF)](./docs/AeonSeed_Detail_Design_Dokument.pdf)
-- [Installationsanleitung](./docs/INSTALLATION.md)
+- [Installationsanleitung](./docs/INSTALL.md)
 - [Build-Hinweise](./docs/BUILD.md)
 - [Modulübersicht](./docs/expansion_map.md)
 
@@ -46,11 +49,11 @@
 
 ## 📄 Lizenz
 
-Dieses Projekt steht unter der **GNU Affero General Public License v3.0 (AGPL-3.0)**.  
+Dieses Projekt steht unter der **MIT-Lizenz**.
 Das bedeutet:
-- ✅ Du darfst alles verwenden, verändern, verbreiten
-- ✅ Auch kommerzielle Nutzung ist erlaubt
-- ❗ Wenn du den Code (auch verändert) öffentlich bereitstellst, musst du den Quellcode offenlegen
+- ✅ Nutzung und Veränderung sind ohne Einschränkungen erlaubt
+- ✅ Du kannst den Code auch in eigenen Projekten verwenden
+- ❗ Eine Kopie der Lizenz muss beiliegen
 
 Weitere Infos in der Datei [`LICENSE`](./LICENSE).
 
@@ -58,7 +61,7 @@ Weitere Infos in der Datei [`LICENSE`](./LICENSE).
 
 ## 🏗️ Installation & Entwicklung
 
-Eine ausführliche Anleitung zur Einrichtung der Entwicklungsumgebung findest du in [docs/INSTALLATION.md](./docs/INSTALLATION.md). Details zum Kompilieren von Client und Server stehen in [docs/BUILD.md](./docs/BUILD.md).
+Eine ausführliche Anleitung zur Einrichtung der Entwicklungsumgebung findest du in [docs/INSTALL.md](./docs/INSTALL.md). Details zum Kompilieren von Client und Server stehen in [docs/BUILD.md](./docs/BUILD.md).
 
 ---
 
