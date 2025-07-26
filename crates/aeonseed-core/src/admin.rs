@@ -3,8 +3,18 @@ use sysinfo::{System, SystemExt};
 
 pub struct AdminPlugin;
 
-fn monitor_command(system: Res<System>) {
-    println!("CPU: {}% RAM: {} MB", system.global_processor_info().cpu_usage(), system.used_memory());
+/// Gibt CPU- und RAM-Auslastung aus.
+///
+/// Die Werte werden bei jedem Aufruf aktualisiert und
+/// zeigen so die aktuelle Last des Servers an.
+fn monitor_command(mut system: ResMut<System>) {
+    system.refresh_cpu();
+    system.refresh_memory();
+    println!(
+        "CPU: {}% RAM: {} MB",
+        system.global_processor_info().cpu_usage(),
+        system.used_memory()
+    );
 }
 
 impl Plugin for AdminPlugin {

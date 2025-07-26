@@ -19,7 +19,7 @@
 
 - **Headless-Server-Modus:** starte mit `--no-render`
 - **Mentor-System & Barrierefreiheit**
-- **Adminbefehl `/monitor`**
+- **Adminbefehl `/monitor`** zeigt Serverauslastung in Echtzeit
 - **Tracy-Profiling & Code-Coverage**
 - **Automatische Benchmarks & Canary-Builds**
 ---
