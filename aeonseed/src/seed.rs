@@ -1,6 +1,7 @@
 use bevy::prelude::*;
 use mongodb::sync::Client as MongoClient;
 use redis::Client as RedisClient;
+use std::{fs::{OpenOptions, create_dir_all}, io::Write};
 
 pub struct SeedPlugin;
 
@@ -16,12 +17,27 @@ impl Plugin for SeedPlugin {
     }
 }
 
-fn init_seed() -> SeedInfo {
+pub fn init_seed() -> SeedInfo {
     let id = std::env::var("SEED_ID").unwrap_or_else(|_| "local-seed".into());
     let mongo_uri = std::env::var("MONGO_URI").unwrap_or_else(|_| "mongodb://localhost:27017".into());
     let redis_uri = std::env::var("REDIS_URI").unwrap_or_else(|_| "redis://127.0.0.1/".into());
-    let _mongo = MongoClient::with_uri_str(&mongo_uri).ok();
-    let _redis = RedisClient::open(redis_uri).ok();
+    create_dir_all("logs").ok();
+    let mut log = OpenOptions::new()
+        .create(true)
+        .append(true)
+        .open("logs/db_connections.log")
+        .ok();
+
+    let mongo_res = MongoClient::with_uri_str(&mongo_uri);
+    let redis_res = RedisClient::open(redis_uri);
+
+    if let Some(mut file) = log.as_mut() {
+        let _ = writeln!(file, "MongoDB connection: {}", if mongo_res.is_ok() { "Ok" } else { "Error" });
+        let _ = writeln!(file, "Redis connection: {}", if redis_res.is_ok() { "Ok" } else { "Error" });
+    }
+
+    let _mongo = mongo_res.ok();
+    let _redis = redis_res.ok();
     SeedInfo { id }
 }
 

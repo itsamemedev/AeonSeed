@@ -1,0 +1,27 @@
+warning: variable does not need to be mutable
+  --> aeonseed/src/ui.rs:78:27
+   |
+78 |                 if let Ok(mut text) = texts.get_mut(*text_entity) {
+   |                           ----^^^^
+   |                           |
+   |                           help: remove this `mut`
+   |
+   = note: `#[warn(unused_mut)]` on by default
+
+warning: `aeonseed` (lib) generated 1 warning (run `cargo fix --lib -p aeonseed` to apply 1 suggestion)
+warning: fields `name`, `class`, and `profession` are never read
+ --> aeonseed/src/player.rs:5:9
+  |
+4 | pub struct Player {
+  |            ------ fields in this struct
+5 |     pub name: String,
+  |         ^^^^
+6 |     pub class: String,
+  |         ^^^^^
+7 |     pub profession: String,
+  |         ^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: `aeonseed` (bin "aeonseed") generated 2 warnings (1 duplicate)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.29s
