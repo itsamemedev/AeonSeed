@@ -38,6 +38,12 @@
 
 - [Erklärbuch (für alle)](./docs/AeonSeed_Erklaerbuch.pdf)
 - [Technisches Design-Dokument (PDF)](./docs/AeonSeed_Detail_Design_Dokument.pdf)
+
+## 🚀 Quickstart
+
+```bash
+cargo run -p aeonseed
+```
 - [Installationsanleitung](./docs/INSTALL.md)
 - [Build-Hinweise](./docs/BUILD.md)
 - [Entwicklungs-Workflow](./docs/DEV_WORKFLOW.md)

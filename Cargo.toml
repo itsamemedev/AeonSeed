@@ -1,8 +1,6 @@
 [workspace]
 members = [
-    "crates/aeonseed-core",
-    "crates/aeonseed-engine",
-    "crates/aeonseed-client",
-    "crates/aeonseed-server"
+    "aeonseed"
 ]
 resolver = "2"
+
