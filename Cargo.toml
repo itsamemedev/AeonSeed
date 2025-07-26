@@ -21,6 +21,13 @@ chrono = { version = "0.4", features = ["serde"] }
 rand = "0.8"
 dotenvy = "0.15"
 serde_yaml = "0.9"
+tokio = { version = "1", features = ["rt-multi-thread", "macros"] }
+mongodb = { version = "3.2", default-features = false, features = ["sync", "openssl-tls", "compat-3-0-0"] }
+redis = "0.23"
+argon2 = "0.5"
+aes-gcm = "0.10"
+serde_json = "1"
+dirs = "5"
 
 [lib]
 path = "src/lib.rs"

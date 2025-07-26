@@ -9,6 +9,10 @@ use aeonseed::{
     game::GamePlugin,
     localization::LocalizationPlugin,
     seednet::SeedNetPlugin,
+    account::AccountPlugin,
+    ui::UiPlugin,
+    events::EventsPlugin,
+    infra::InfraPlugin,
 };
 
 #[derive(Deserialize, Default)]
@@ -37,6 +41,10 @@ fn main() {
             AeonCodePlugin,
             GamePlugin,
             LocalizationPlugin,
+            AccountPlugin,
+            UiPlugin,
+            EventsPlugin,
+            InfraPlugin,
         ))
         .run();
 }

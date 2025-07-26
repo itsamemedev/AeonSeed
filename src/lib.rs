@@ -6,3 +6,7 @@ pub mod render;
 pub mod seednet;
 pub mod zones;
 pub mod cluster;
+pub mod account;
+pub mod ui;
+pub mod events;
+pub mod infra;
