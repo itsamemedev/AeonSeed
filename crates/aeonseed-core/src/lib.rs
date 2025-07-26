@@ -1,3 +1,5 @@
+#[cfg_attr(doc, doc(cfg(feature = "profiling")))]
+pub mod profile;
 pub mod aeoncode;
 pub mod ai;
 pub mod game;
@@ -23,3 +25,9 @@ pub mod config;
 pub mod reporting;
 pub mod audio;
 pub mod seed_ai;
+pub mod mentor;
+pub mod accessibility;
+pub mod admin;
+pub mod balancing;
+pub mod dynamic_ui;
+pub mod net_sim;

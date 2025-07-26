@@ -41,3 +41,4 @@ Dieser Leitfaden beschreibt den kompletten Ablauf für die Arbeit am Projekt **A
 
 Der Einstiegspunkt für KI-Funktionen befindet sich in `src/seed_ai.rs`. Neue Module lassen sich als Bevy-Plugins ergänzen. Für ein neues PvE-Event erstelle ein Modul unter `src/events/`, registriere es im Plugin und schreibe Tests unter `tests/`.
 
+\n### Profiling & Coverage\n- `just bench` erstellt Benchmarks\n- `cargo tarpaulin` generiert Testabdeckung\n- `TRACY=1` aktiviert das ECS-Profiling

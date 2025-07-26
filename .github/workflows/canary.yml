@@ -1,0 +1,19 @@
+name: Canary
+on:
+  schedule:
+    - cron: '0 4 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - run: cargo build --profile release -p aeonseed-server
+      - run: cargo test --all
+      - uses: actions/upload-artifact@v3
+        with:
+          name: server
+          path: target/release/aeonseed-server
