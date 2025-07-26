@@ -1,28 +1,13 @@
-use bevy::prelude::*;
 use aeonseed::{
-    aeoncode::AeonCodePlugin,
-    ai::AiPlugin,
-    cluster::ClusterPlugin,
-    game::GamePlugin,
-    localization::LocalizationPlugin,
-    render::RenderPlugin,
-    seednet::SeedNetPlugin,
-    account::AccountPlugin,
-    ui::UiPlugin,
-    events::EventsPlugin,
-    infra::InfraPlugin,
-    world::WorldPlugin,
-    instance::InstancePlugin,
-    lang::LangPlugin,
-    class::ClassExtPlugin,
-    soul::SoulExtPlugin,
-    skills::SkillsPlugin,
-    clan::ClanPlugin,
-    tools::ToolsPlugin,
-    modding::ModdingPlugin,
-    audio::mood_engine::MoodEnginePlugin,
-    reporting::feedback::FeedbackPlugin,
+    account::AccountPlugin, aeoncode::AeonCodePlugin, ai::AiPlugin,
+    audio::mood_engine::MoodEnginePlugin, clan::ClanPlugin, class::ClassExtPlugin,
+    cluster::ClusterPlugin, events::EventsPlugin, expansions::ExpansionsPlugin, game::GamePlugin,
+    infra::InfraPlugin, instance::InstancePlugin, lang::LangPlugin,
+    localization::LocalizationPlugin, modding::ModdingPlugin, render::RenderPlugin,
+    reporting::feedback::FeedbackPlugin, seednet::SeedNetPlugin, skills::SkillsPlugin,
+    soul::SoulExtPlugin, tools::ToolsPlugin, ui::UiPlugin, world::WorldPlugin,
 };
+use bevy::prelude::*;
 
 fn main() {
     // Initialize Bevy application with basic plugins
@@ -51,9 +36,9 @@ fn main() {
             ClanPlugin,
             ToolsPlugin,
             ModdingPlugin,
+            ExpansionsPlugin,
             MoodEnginePlugin,
             FeedbackPlugin,
         ))
         .run();
 }
-

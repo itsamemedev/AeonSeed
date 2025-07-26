@@ -63,3 +63,24 @@ Insgesamt umfasst das Spiel derzeit mehr als vierzig einzelne Systeme, die fortl
 - Mentor-System und AI-Balancing `[v0.6+]`
 - Barrierefreie UI und /monitor `[v0.6+]`
 - Code-Coverage und Fuzzing `[v0.6+]`
+- Dynamische Welt-Events `[v0.7+]`
+- Zonen-Evolution je nach Spielerverhalten `[v0.7+]`
+- Mehrwährungssystem und Aeonium `[v0.7+]`
+- Regionale Seed-Regeln `[v0.7+]`
+- Zeitgesteuerte Events `[v0.7+]`
+- Charakterfortschritt durch Entscheidungen `[v0.7+]`
+- Erinnerungsbindung und Vergessen `[v0.7+]`
+- KI-generierte Nebenquests `[v0.7+]`
+- Ruf- und Fraktionssystem `[v0.7+]`
+- Legacy-Mechanik `[v0.7+]`
+- Visuelle Dev-Tools `[v0.7+]`
+- Sandbox-Scripting `[v0.7+]`
+- Asset-Streaming `[v0.7+]`
+- Snapshot-System `[v0.7+]`
+- KI-Benchmarking `[v0.7+]`
+- Seed-Voting-System `[v0.7+]`
+- Mentor-Overlay `[v0.7+]`
+- Twitch-Integration `[v0.7+]`
+- Web-Companion `[v0.7+]`
+- ML-Spielerfeedback `[v0.7+]`
+- Seed-Fusion `[v0.7+]`
