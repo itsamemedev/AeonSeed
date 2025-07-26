@@ -46,3 +46,26 @@ This document lists the implemented systems and planned improvements for AeonSee
 18. Repeatable events with reward debuff
 19. Seed rescue when worlds decay
 20. Cluster heatmap showing activity zones
+
+## New Experimental Systems
+- `world::climate` – dynamic seasons and weather affecting combat and farming
+- `world::resource_pressure` – scarcity influences NPC behavior and trade
+- `instance::shadow_realms` – inverted-logic versions of existing seeds
+- `world::anomalies` – time acceleration or reversal events
+- `lang::language_barriers` – faction languages requiring research
+- `class::morphing` – ritual based class switching
+- `class::shadow_classes` – hidden questline professions
+- `soul::modifications` – configurable soul attributes
+- `soul::reincarnation` – new worldview after death
+- `skills::mutation` – skills evolve through instability or choice
+- `clan::fortresses` – territory control with buff zones
+- `events::pvpve` – arenas combining PvP and PvE encounters
+- `clan::nomads` – traveling clans without home seeds
+- `cluster::magnetism` – cross-seed collisions causing chaos
+- `cluster::camouflage` – seeds hidden unless revealed by rituals
+- `tools::cluster_dashboard` – web UI for cluster heatmaps
+- `modding::api` – load custom classes, items and quests
+- `config::ai_policy` – JSON policy loader for AI behavior
+- `reporting::feedback` – screenshot and log upload button
+- `audio::mood_engine` – AI-synthesized music based on mood
+

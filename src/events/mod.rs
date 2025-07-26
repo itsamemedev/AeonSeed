@@ -3,6 +3,7 @@ use bevy::prelude::*;
 pub mod dungeon;
 pub mod raid;
 pub mod pvp;
+pub mod pvpve;
 pub mod ritual;
 
 pub struct EventsPlugin;
@@ -13,6 +14,7 @@ impl Plugin for EventsPlugin {
             dungeon::DungeonPlugin,
             raid::RaidPlugin,
             pvp::PvpPlugin,
+            pvpve::PvpvePlugin,
             ritual::RitualPlugin,
         ));
     }
