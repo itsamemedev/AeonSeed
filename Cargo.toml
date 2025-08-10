@@ -1,6 +1,7 @@
 [workspace]
 members = [
-    "aeonseed"
+    "aeonseed",
+    "crates/aeonseed-core"
 ]
 resolver = "2"
 

@@ -1,0 +1,2 @@
+UI build (`cargo build -p aeonseed`) completed in ~0.98s.
+Warnings: unused mut in seed.rs and ui.rs; dead fields in player.rs.

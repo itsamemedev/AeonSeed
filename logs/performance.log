@@ -1,0 +1,2 @@
+`cargo bench` could not run; build failed in aeonseed-core with unresolved tracing_subscriber/tracing_tracy and trait issues.
+No benchmarks executed.

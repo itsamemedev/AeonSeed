@@ -1,0 +1,3 @@
+Final integration release build failed.
+Errors: unresolved tracing_subscriber/tracing_tracy, sysinfo::SystemExt missing, trait bounds in admin.rs, dynamic_ui window resolution type mismatch, expansions plugin tuple size, NetworkSim FromWorld.
+Build time ~19.4s before failure.

@@ -1,0 +1,1 @@
+`cargo test --lib events` failed: aeonseed-core missing tracing_subscriber/tracing_tracy imports and sysinfo::SystemExt, plus multiple trait bounds. Tests could not run.
