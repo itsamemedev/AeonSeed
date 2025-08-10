@@ -1,0 +1,6 @@
+Release build of aeonseed-core
+Errors encountered:
+- unresolved imports: tracing_subscriber, tracing_tracy
+- sysinfo SystemExt not found
+- multiple trait bound errors in admin.rs and others
+Build failed after ~10m35s (user 33m36s sys 5m44s)
